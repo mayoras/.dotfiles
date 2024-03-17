@@ -1,0 +1,1 @@
+/home/cam/.asdf/completions/asdf.fish

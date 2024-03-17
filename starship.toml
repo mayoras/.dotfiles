@@ -1,0 +1,62 @@
+format = "$all"
+# Inserts a blank line between shell prompts
+add_newline = false
+
+# Replace the "❯" symbol in the prompt with "➜"
+[character]                            # The name of the module we are configuring is "character"
+success_symbol = "[ﬦ](bold green)"     # The "success_symbol" segment is being set to "➜" with the color "bold green"
+error_symbol = "[ﬦ](bold red)"
+
+[line_break]
+disabled = false
+
+# Disable the package module, hiding it from the prompt completely
+[package]
+disabled = true
+
+[battery]
+full_symbol = "🔋"
+charging_symbol = "⚡️"
+discharging_symbol = "💀"
+
+[[battery.display]]  # "bold red" style when capacity is between 0% and 10%
+threshold = 10
+style = "bold red"
+
+# docker
+[docker_context]
+format = "via [🐋 $context](blue bold)"
+disabled = false
+
+[[battery.display]]  # "bold yellow" style when capacity is between 10% and 30%
+threshold = 30
+style = "bold yellow"
+
+# username
+[username]
+style_user = "purple bold"
+style_root = "red bold"
+format = "[$user]($style)"
+disabled = false
+show_always = true
+
+# hostname
+[hostname]
+ssh_only = false
+format = "[@](white bold)[$hostname](bold yellow) in "
+trim_at = ".companyname.com"
+disabled = false
+
+# Custom Elixir
+[elixir]
+disabled = true
+[custom.asdf_elixir]
+command = """asdf current elixir | awk '{print $2}' | awk -F'-' '{print "v"$1" (OTP "$3")"}'"""
+detect_files = ["mix.exs"]
+format = "via  [$output]($style) "
+style = "bold purple"
+
+[c]
+detect_extensions = ["c", "h", "cpp", "cc", "hpp"]
+symbol = "ﭰ "
+
