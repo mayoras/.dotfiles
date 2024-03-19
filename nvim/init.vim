@@ -73,9 +73,9 @@ let g:gruvbox_italic=1
 if (has("termguicolors"))
     set termguicolors
 endif
-colorscheme dracula
+colorscheme gruvbox
 " Match airline theme
-let g:airline_theme='dracula'
+let g:airline_theme='gruvbox'
 
 " Rust stuff
 let g:rustfmt_autosave = 1
